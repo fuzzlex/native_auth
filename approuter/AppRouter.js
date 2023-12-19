@@ -21,33 +21,31 @@ const AppRouter = () => {
 
   const Tab = createBottomTabNavigator();
 
-  const HomeStack = () => (
-
-<Stack.Navigator
-          initialRouteName="StartScreen"
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="StartScreen" component={StartScreen} />
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
-          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-          <Stack.Screen name="Dashboard" component={Dashboard} />
-          <Stack.Screen
-            name="ResetPasswordScreen"
-            component={ResetPasswordScreen}
-          />
+  const LoginStack = () => (
+    <Stack.Navigator
+      initialRouteName="StartScreen"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="StartScreen" component={StartScreen} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+      <Stack.Screen name="DrawerHomeStack" component={DrawerHomeStack} />
+      <Stack.Screen
+        name="ResetPasswordScreen"
+        component={ResetPasswordScreen}
+      />
     </Stack.Navigator>
   );
   const TabHomeStack = () => (
     <Tab.Navigator>
-      {/* <Tab.Screen name="Home" component={Home} /> */}
       <Tab.Screen
         name="Ana Sayfa"
-        component={HomeStack}
+        component={LoginStack}
         options={{ headerShown: false }}
       />
-      <Tab.Screen name="NotificationsScreen" component={NotificationsScreen} />
+
     </Tab.Navigator>
   );
   const DrawerHomeStack = () => (
@@ -60,7 +58,7 @@ const AppRouter = () => {
   return (
     <>
       <NavigationContainer>
-        <TabHomeStack />
+        <LoginStack />
       </NavigationContainer>
     </>
   );

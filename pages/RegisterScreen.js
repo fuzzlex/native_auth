@@ -32,27 +32,24 @@ export default function RegisterScreen({ navigation }) {
 
       return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Dashboard' }],
-    })
+    // navigation.reset({
+    //   index: 0,
+    //   routes: [{ name: 'Dashboard' }],
+    // })
     register()
 
   }
+  
   const register = () => {
     createUserWithEmailAndPassword(auth, email.value, password.value)
       .then((userCredential) => {
           const user = userCredential.user;
-        setDoc(doc(db, "users", user.uid), { uid:user.uid, email:email.value, name:name.value, req:[], realFriend:[], avatar:avatar  });
+        setDoc(doc(db, "users", user.uid), { uid:user.uid, email:email.value, name:name.value, req:[], realFriend:[], avatar:avatar,  })
       
-          updateProfile(user, {
-              displayName: name,
-              photoURL: avatar ? avatar : 'https://robohash.org/default',
-          })
-          
+
           .then(() => {
-              alert('Registered, please login.');
-              navigation.navigate('Login');
+              alert('Başarlı bir şekilde kayıt olundu Lütfen giriş yapınız.');
+              navigation.navigate('LoginScreen');
           })
           .catch((error) => {
               alert(error.message);

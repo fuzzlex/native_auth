@@ -4,26 +4,27 @@ import Logo from '../components/Logo'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import Paragraph from '../components/Paragraph'
+import { Image, StyleSheet } from 'react-native'
 
 export default function StartScreen({ navigation }) {
   return (
     <Background>
-      <Logo />
-      <Header>Login Template</Header>
+      <Image source={require('../assets/startscreen-1.jpg')} style={{width:330, height:300, borderBottomLeftRadius:170, borderBottomRightRadius:50}} />
+      <Header>ROMATEM'e Hoşgeldiniz</Header>
       <Paragraph>
-        The easiest way to start with your amazing application.
+        Romatem ile tüm tedavilerinizi yönetin
       </Paragraph>
       <Button
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}
       >
-        Login
+        Giriş Yap
       </Button>
       <Button
         mode="outlined"
         onPress={() => navigation.navigate('RegisterScreen')}
       >
-        Sign Up
+        Üye Ol
       </Button>
     </Background>
   )
