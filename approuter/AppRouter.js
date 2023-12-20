@@ -1,7 +1,12 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import React, { useEffect, useState } from "react";
+import { DrawerActions, NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import {
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
+  createDrawerNavigator,
+} from "@react-navigation/drawer";
 
 import { Text } from "react-native";
 import Portfolyo from "../components/Portfolyo";
@@ -14,12 +19,21 @@ import Dashboard from "../pages/Dashboard";
 import StartScreen from "../pages/StartScreen";
 import RegisterScreen from "../pages/RegisterScreen";
 import ResetPasswordScreen from "../pages/ResetPasswordScreen";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { View, Button } from "react-native";
+
 
 const AppRouter = () => {
   const Stack = createNativeStackNavigator();
   const Drawer = createDrawerNavigator();
 
   const Tab = createBottomTabNavigator();
+  const [currentUser, setCurrentUser] = useState();
+  useEffect( () => {
+    AsyncStorage.getItem("TOKEN").then(token => setCurrentUser(token) )
+  }, []);
+  console.log(`currentUser`,currentUser);
+
 
   const LoginStack = () => (
     <Stack.Navigator
@@ -45,20 +59,46 @@ const AppRouter = () => {
         component={LoginStack}
         options={{ headerShown: false }}
       />
-
     </Tab.Navigator>
   );
+
+  function CustomHeader({ navigation }) {
+    return (
+      <View
+        style={{
+
+          height:100
+        }}
+      >
+      <Navbar navigation={navigation} />
+
+      
+        {/* <TouchableOpacity
+          style={{ marginTop: 30 }}
+          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+        >
+          <Button title="Menu"></Button>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ marginTop: 30 }} onPress={() => {}}>
+          <Button title="dadwa"></Button>
+        </TouchableOpacity> */}
+      </View>
+    );
+  }
   const DrawerHomeStack = () => (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={LoginScreen} />
-      {/* <Drawer.Screen name="Port" component={Portfolyo} /> */}
+    <Drawer.Navigator
+      screenOptions={({ navigation }) => ({
+        header: (props) => <CustomHeader {...props} navigation={navigation} />,
+      })}
+    >
+      <Drawer.Screen name="Port" component={Portfolyo} />
     </Drawer.Navigator>
   );
   // screenOptions={{  header: () => <Navbar/> }}
   return (
     <>
       <NavigationContainer>
-        <LoginStack />
+        {currentUser=== undefined ? <LoginStack /> : <DrawerHomeStack />}
       </NavigationContainer>
     </>
   );

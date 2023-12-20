@@ -12,6 +12,7 @@ import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
@@ -40,8 +41,9 @@ export default function LoginScreen({ navigation }) {
   const signin = () => {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
-          console.log(userCredential.user.uid)
-          navigation.navigate('TabHomeStack', {user_id:userCredential.user.uid});
+          console.log(userCredential.user)
+          AsyncStorage.setItem("TOKEN", userCredential.user.uid);
+          navigation.navigate('DrawerHomeStack', {user_id:userCredential.user.uid});
         })
         .catch((error) => {
           const errorCode = error.code;
