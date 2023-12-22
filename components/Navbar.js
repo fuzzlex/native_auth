@@ -1,31 +1,56 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-import { Avatar } from '@rneui/themed';
+import { Avatar } from "@rneui/themed";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { DrawerActions } from "@react-navigation/native";
 
-export default function Navbar({navigation}) {
+export default function Navbar({ navigation }) {
   return (
-    <View style={{display:"flex",flexDirection:`row`,justifyContent:`space-between`,margin:9}}>
+    <View
+      style={{
+        display: "flex",
+        flexDirection: `row`,
+        justifyContent: `space-between`,
+        padding: 10,
+        backgroundColor: "#8ecae6",
+        borderBottomLeftRadius:30,
+        borderBottomRightRadius:30
+      }}
+    >
       <Avatar
-    size={45}
-    rounded
-    icon={{ name: "bars", type: "font-awesome" }}
-    containerStyle={{ backgroundColor: "#9700b9", marginTop:25, marginLeft:5}}
-    onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-  />
-  <Text style={{fontSize:50,marginTop:30}}>ROMATEM</Text>
+        size={45}
+        rounded
+        icon={{ name: "user", type: "font-awesome" }}
+        containerStyle={{
+          backgroundColor: "#023047",
+          marginTop: 25,
+          marginLeft: 5,
+        }}
+        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+      />
+      <Text style={{marginTop:45, marginRight:"auto", marginLeft:10, fontWeight:600,fontSize:15,fontFamily: 'Cochin', }}>Hoşgeldin Ali</Text>
       <Avatar
-    size={45}
-    rounded
-    icon={{ name: "user", type: "font-awesome" }}
-    containerStyle={{ backgroundColor: "#9700b9", marginTop:25, marginLeft:5}}
-    onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-  />
-
-      
-
+        size={45}
+        icon={{ name: "stethoscope", type: "font-awesome" }}
+        containerStyle={{
+          backgroundColor: "#023047",
+          marginTop: 25,
+          marginLeft: 5,
+        }}
+        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+      />
+      <Avatar
+        size={45}
+        rounded
+        icon={{ name: "bell", type: "font-awesome" }}
+        containerStyle={{
+          backgroundColor: "#023047",
+          marginTop: 25,
+          marginLeft: 5,
+        }}
+        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+      />
     </View>
   );
 }

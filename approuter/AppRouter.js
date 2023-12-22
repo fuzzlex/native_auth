@@ -9,7 +9,6 @@ import {
 } from "@react-navigation/drawer";
 
 import { Text } from "react-native";
-import Portfolyo from "../components/Portfolyo";
 import Home from "../components/Home";
 import Navbar from "../components/Navbar";
 import NotificationsScreen from "../components/NotificationsScreen";
@@ -21,6 +20,7 @@ import RegisterScreen from "../pages/RegisterScreen";
 import ResetPasswordScreen from "../pages/ResetPasswordScreen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Button } from "react-native";
+import DoctorHome from "../components/DoctorHome";
 
 
 const AppRouter = () => {
@@ -91,7 +91,7 @@ const AppRouter = () => {
         header: (props) => <CustomHeader {...props} navigation={navigation} />,
       })}
     >
-      <Drawer.Screen name="Port" component={Portfolyo} />
+      <Drawer.Screen name="doctor-home" component={DoctorHome} />
     </Drawer.Navigator>
   );
   // screenOptions={{  header: () => <Navbar/> }}
