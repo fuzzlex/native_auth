@@ -18,7 +18,7 @@ export default function DoctorHome({navigation}) {
       });
   return (
     <View>
-
+    <Text>fdks</Text>
       
 
     </View>

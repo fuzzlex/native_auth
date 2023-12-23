@@ -20,7 +20,7 @@ import RegisterScreen from "../pages/RegisterScreen";
 import ResetPasswordScreen from "../pages/ResetPasswordScreen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Button } from "react-native";
-import DoctorHome from "../components/DoctorHome";
+import DoctorHome from "../pages/DoctorHome";
 
 
 const AppRouter = () => {
@@ -50,6 +50,18 @@ const AppRouter = () => {
         name="ResetPasswordScreen"
         component={ResetPasswordScreen}
       />
+    </Stack.Navigator>
+  );
+  const DoctorStack = () => (
+    <Stack.Navigator
+      initialRouteName="doctor-home"
+      screenOptions={{
+      header: () => <Navbar />, // NavbarComponent burada başlık çubuğu yerine kullanılacak bileşendir
+      headerShown: true,
+    }}
+    >
+      <Stack.Screen name="doctor-home" component={DoctorHome} />
+   
     </Stack.Navigator>
   );
   const TabHomeStack = () => (
@@ -98,7 +110,7 @@ const AppRouter = () => {
   return (
     <>
       <NavigationContainer>
-        {currentUser=== undefined ? <LoginStack /> : <DrawerHomeStack />}
+        {currentUser == null ? <LoginStack /> : <DoctorStack />}
       </NavigationContainer>
     </>
   );

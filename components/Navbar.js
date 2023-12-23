@@ -12,7 +12,7 @@ export default function Navbar({ navigation }) {
         display: "flex",
         flexDirection: `row`,
         justifyContent: `space-between`,
-        padding: 10,
+        padding: 20,
         backgroundColor: "#8ecae6",
         borderBottomLeftRadius:30,
         borderBottomRightRadius:30
@@ -27,18 +27,19 @@ export default function Navbar({ navigation }) {
           marginTop: 25,
           marginLeft: 5,
         }}
-        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+        // onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
       />
       <Text style={{marginTop:45, marginRight:"auto", marginLeft:10, fontWeight:600,fontSize:15,fontFamily: 'Cochin', }}>Hoşgeldin Ali</Text>
       <Avatar
         size={45}
         icon={{ name: "stethoscope", type: "font-awesome" }}
         containerStyle={{
-          backgroundColor: "#023047",
+          // backgroundColor: "",
           marginTop: 25,
           marginLeft: 5,
         }}
-        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+        // style={{color:`black`}}
+        // onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
       />
       <Avatar
         size={45}
@@ -49,7 +50,7 @@ export default function Navbar({ navigation }) {
           marginTop: 25,
           marginLeft: 5,
         }}
-        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+        // onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
       />
     </View>
   );
