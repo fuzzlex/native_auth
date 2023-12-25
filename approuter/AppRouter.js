@@ -21,6 +21,8 @@ import ResetPasswordScreen from "../pages/ResetPasswordScreen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Button } from "react-native";
 import DoctorHome from "../pages/DoctorHome";
+import DoctorPatients from "../pages/DoctorPatients";
+import DoctorPatientDetail from "../pages/DoctorPatientDetail";
 
 
 const AppRouter = () => {
@@ -56,11 +58,13 @@ const AppRouter = () => {
     <Stack.Navigator
       initialRouteName="doctor-home"
       screenOptions={{
-      header: () => <Navbar />, // NavbarComponent burada başlık çubuğu yerine kullanılacak bileşendir
+      // header: () => <Navbar />,
       headerShown: true,
     }}
     >
-      <Stack.Screen name="doctor-home" component={DoctorHome} />
+      <Stack.Screen options={{ headerShown: false}}  name="doctor-home" component={DoctorHome} />
+      <Stack.Screen options={{title: "Hastalarim"}} name="doctor-patient" component={DoctorPatients} />
+      <Stack.Screen options={{title: "Hasta Detay"}} name="doctor-patient-detail" component={DoctorPatientDetail} />
    
     </Stack.Navigator>
   );

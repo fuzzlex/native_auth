@@ -12,10 +12,11 @@ export default function Navbar({ navigation }) {
         display: "flex",
         flexDirection: `row`,
         justifyContent: `space-between`,
-        padding: 20,
-        backgroundColor: "#8ecae6",
+        padding: 30,
+        backgroundColor: "#219ebc",
         borderBottomLeftRadius:30,
-        borderBottomRightRadius:30
+        borderBottomRightRadius:30,
+        zIndex:999
       }}
     >
       <Avatar
