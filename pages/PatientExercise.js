@@ -48,7 +48,7 @@ export default function PatientExercise({navigation}) {
     <ScrollView>
       {exercises.map((exercise) => (
         <Card
-          onPress={() => navigation.navigate(`doctor-patient-detail`, exercise)}
+          onPress={() => navigation.navigate(`patient-exercise-detail`, exercise)}
           style={{
             margin: 5,
             padding: 25,

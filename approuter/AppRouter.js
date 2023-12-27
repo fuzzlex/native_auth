@@ -25,6 +25,7 @@ import DoctorPatients from "../pages/DoctorPatients";
 import DoctorPatientDetail from "../pages/DoctorPatientDetail";
 import PatientHome from "../pages/PatientsHome";
 import PatientExercise from "../pages/PatientExercise";
+import ExerciseDetail from "../pages/ExerciseDetail";
 const AppRouter = () => {
   const Stack = createNativeStackNavigator();
   const Drawer = createDrawerNavigator();
@@ -65,7 +66,7 @@ const AppRouter = () => {
     >
       <Stack.Screen options={{ headerShown: false}}  name="patient-home" component={PatientHome} />
       <Stack.Screen options={{title: "Egzersizlerim"}} name="patient-exercise" component={PatientExercise} />
-      <Stack.Screen options={{title: "Hasta Detay"}} name="doctor-patient-detail" component={DoctorPatientDetail} />
+      <Stack.Screen options={{title: "Detaylar"}} name="patient-exercise-detail" component={ExerciseDetail} />
    
     </Stack.Navigator>
   );

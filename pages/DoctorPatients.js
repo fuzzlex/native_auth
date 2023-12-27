@@ -46,8 +46,8 @@ export default function DoctorPatients({navigation}) {
   return (
     <View>
     <ScrollView>
-      {patients.map((patient) => (
-        <Card
+      {patients.map((patient,index) => (
+        <Card key={index}
           onPress={() => navigation.navigate(`doctor-patient-detail`, patient)}
           style={{
             margin: 5,
