@@ -23,8 +23,8 @@ import { View, Button } from "react-native";
 import DoctorHome from "../pages/DoctorHome";
 import DoctorPatients from "../pages/DoctorPatients";
 import DoctorPatientDetail from "../pages/DoctorPatientDetail";
-
-
+import PatientHome from "../pages/PatientsHome";
+import PatientExercise from "../pages/PatientExercise";
 const AppRouter = () => {
   const Stack = createNativeStackNavigator();
   const Drawer = createDrawerNavigator();
@@ -54,16 +54,17 @@ const AppRouter = () => {
       />
     </Stack.Navigator>
   );
-  const DoctorStack = () => (
+  // const DoctorStack = () => (
+  const PatientStack = () => (
     <Stack.Navigator
-      initialRouteName="doctor-home"
+      initialRouteName="patient-home"
       screenOptions={{
       // header: () => <Navbar />,
       headerShown: true,
     }}
     >
-      <Stack.Screen options={{ headerShown: false}}  name="doctor-home" component={DoctorHome} />
-      <Stack.Screen options={{title: "Hastalarim"}} name="doctor-patient" component={DoctorPatients} />
+      <Stack.Screen options={{ headerShown: false}}  name="patient-home" component={PatientHome} />
+      <Stack.Screen options={{title: "Egzersizlerim"}} name="patient-exercise" component={PatientExercise} />
       <Stack.Screen options={{title: "Hasta Detay"}} name="doctor-patient-detail" component={DoctorPatientDetail} />
    
     </Stack.Navigator>
@@ -107,14 +108,14 @@ const AppRouter = () => {
         header: (props) => <CustomHeader {...props} navigation={navigation} />,
       })}
     >
-      <Drawer.Screen name="doctor-home" component={DoctorHome} />
+      <Drawer.Screen name="patient-home" component={PatientHome} />
     </Drawer.Navigator>
   );
   // screenOptions={{  header: () => <Navbar/> }}
   return (
     <>
       <NavigationContainer>
-        {currentUser == null ? <LoginStack /> : <DoctorStack />}
+        {currentUser == null ? <LoginStack /> : <PatientStack />}
       </NavigationContainer>
     </>
   );
