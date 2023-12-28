@@ -42,7 +42,7 @@ export default function DoctorHome({ navigation }) {
         <Card.Actions></Card.Actions>
       </Card>
 
-      <Card style={{ margin: 5, padding: 45, backgroundColor: `#023047` }}>
+      <Card onPress={() => navigation.navigate(`doctor-exercies`)} style={{ margin: 5, padding: 45, backgroundColor: `#023047` }}>
         <Card.Content>
           <Text style={{ color: `white`, fontSize: 22 }} variant="titleLarge">
             EGZERSIZLER

@@ -23,6 +23,9 @@ import { View, Button } from "react-native";
 import DoctorHome from "../pages/DoctorHome";
 import DoctorPatients from "../pages/DoctorPatients";
 import DoctorPatientDetail from "../pages/DoctorPatientDetail";
+import DoctorExerciseAssign from "../pages/DoctorExerciseAssign";
+import ExerciseListScreen from "../pages/DoctorExercies";
+import ExerciseDetailScreen from "../pages/DoctorExerciesDetail";
 
 
 const AppRouter = () => {
@@ -65,6 +68,8 @@ const AppRouter = () => {
       <Stack.Screen options={{ headerShown: false}}  name="doctor-home" component={DoctorHome} />
       <Stack.Screen options={{title: "Hastalarim"}} name="doctor-patient" component={DoctorPatients} />
       <Stack.Screen options={{title: "Hasta Detay"}} name="doctor-patient-detail" component={DoctorPatientDetail} />
+      <Stack.Screen options={{title: "Egzersizler"}} name="doctor-exercies" component={ExerciseListScreen} />
+      <Stack.Screen options={{title: "Egzersiz Detay"}} name="doctor-exercies-detail" component={ExerciseDetailScreen} />
    
     </Stack.Navigator>
   );
