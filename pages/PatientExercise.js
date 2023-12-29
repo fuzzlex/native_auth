@@ -5,44 +5,45 @@ import { Image } from "@rneui/base";
 // import { ScrollView } from "react-native-gesture-handler";
 
 export default function PatientExercise({navigation}) {
-  const exercises = [
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/2/250/350",
-    },
-    {
-      name: `Zeki`,
-      surname: `Bal`,
-      age: 22,
-      image: "https://picsum.photos/id/3/250/350",
-    },
-    {
-      name: `Yusuf`,
-      surname: `Bagcilar`,
-      age: 42,
-      image: "https://picsum.photos/id/4/250/350",
-    },
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/5/250/350",
-    },
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/6/250/350",
-    },
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/7/250/350",
-    },
-  ];
+  const exercises = require("../helpers/myExercise.json");
+  // const exercises = [
+  //   {
+  //     name: `Ahmet Zeki`,
+  //     surname: `Tas`,
+  //     age: 22,
+  //     image: "https://picsum.photos/id/2/250/350",
+  //   },
+  //   {
+  //     name: `Zeki`,
+  //     surname: `Bal`,
+  //     age: 22,
+  //     image: "https://picsum.photos/id/3/250/350",
+  //   },
+  //   {
+  //     name: `Yusuf`,
+  //     surname: `Bagcilar`,
+  //     age: 42,
+  //     image: "https://picsum.photos/id/4/250/350",
+  //   },
+  //   {
+  //     name: `Ahmet Zeki`,
+  //     surname: `Tas`,
+  //     age: 22,
+  //     image: "https://picsum.photos/id/5/250/350",
+  //   },
+  //   {
+  //     name: `Ahmet Zeki`,
+  //     surname: `Tas`,
+  //     age: 22,
+  //     image: "https://picsum.photos/id/6/250/350",
+  //   },
+  //   {
+  //     name: `Ahmet Zeki`,
+  //     surname: `Tas`,
+  //     age: 22,
+  //     image: "https://picsum.photos/id/7/250/350",
+  //   },
+  // ];
   return (
     <View>
     <ScrollView>
