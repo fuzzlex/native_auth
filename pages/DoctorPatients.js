@@ -1,53 +1,20 @@
-import { View, Text,ScrollView } from "react-native";
+import { View, Text,ScrollView  } from "react-native";
 import React from "react";
 import { Card } from "react-native-paper";
 import { Image } from "@rneui/base";
 // import { ScrollView } from "react-native-gesture-handler";
 
 export default function DoctorPatients({navigation}) {
-  const patients = [
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/2/250/350",
-    },
-    {
-      name: `Zeki`,
-      surname: `Bal`,
-      age: 22,
-      image: "https://picsum.photos/id/3/250/350",
-    },
-    {
-      name: `Yusuf`,
-      surname: `Bagcilar`,
-      age: 42,
-      image: "https://picsum.photos/id/4/250/350",
-    },
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/5/250/350",
-    },
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/6/250/350",
-    },
-    {
-      name: `Ahmet Zeki`,
-      surname: `Tas`,
-      age: 22,
-      image: "https://picsum.photos/id/7/250/350",
-    },
-  ];
+  const patients = require("../helpers/patients.json");
   return (
     <View>
+      <Text
+      style={{textAlign:"center", fontSize:29, marginTop:19}}
+      >Kayıtlı Hastalar</Text>
     <ScrollView>
-      {patients.map((patient) => (
+      {patients.map((patient,index) => (
         <Card
+        key={index}
           onPress={() => navigation.navigate(`doctor-patient-detail`, patient)}
           style={{
             margin: 5,
@@ -94,6 +61,7 @@ export default function DoctorPatients({navigation}) {
         </Card>
       ))}
       </ScrollView>
+     
     </View>
   );
 }

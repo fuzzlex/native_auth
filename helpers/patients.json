@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Ahmet Zeki",
+        "sur": "Tas",
+        "age": 22,
+        "image": "https://picsum.photos/id/2/250/350"
+      },
+      {
+        "name": "Zeki",
+        "sur": "Bal",
+        "age": 22,
+        "image": "https://picsum.photos/id/3/250/350"
+      },
+      {
+        "name": "Yusuf",
+        "sur": "Bagcilar",
+        "age": 42,
+        "image": "https://picsum.photos/id/4/250/350"
+      },
+      {
+        "name": "Ahmet Zeki",
+        "sur": "Tas",
+        "age": 22,
+        "image": "https://picsum.photos/id/5/250/350"
+      },
+      {
+        "name": "Ahmet Zeki",
+        "sur": "Tas",
+        "age": 22,
+        "image": "https://picsum.photos/id/6/250/350"
+      },
+      {
+        "name": "Ahmet Zeki",
+        "sur": "Tas",
+        "age": 22,
+        "image": "https://picsum.photos/id/7/250/350"
+      }
+]

@@ -1,12 +1,16 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function DoctorPatientDetail() {
+export default function DoctorPatientDetail({navigation}) {
   const route = useRoute();
   const { name, surname, image } = route.params;
   return (
-    <View>
+    <View 
+    style={{
+      height:"100%"
+    }}>
       <View
         style={{
           display: `flex`,
@@ -26,8 +30,25 @@ export default function DoctorPatientDetail() {
         </View>
       </View>
       <Text style={{ fontSize: 30, textAlign: `center`, marginTop: 15 }}>
-          Egzersizler
-        </Text>
+        Egzersizler
+      </Text>
+
+      <TouchableOpacity
+        style={{
+          position: "absolute",
+          bottom: 40,
+          right: 20,
+          backgroundColor: "#023047",
+          borderRadius: 50,
+          width: 80,
+          height: 80,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        onPress={() => navigation.navigate("doctor-add-exercise")}
+      >
+        <Ionicons name="add" size={30} color="white" />
+      </TouchableOpacity>
     </View>
   );
 }

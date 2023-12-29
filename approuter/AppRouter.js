@@ -26,6 +26,7 @@ import DoctorPatientDetail from "../pages/DoctorPatientDetail";
 import DoctorExerciseAssign from "../pages/DoctorExerciseAssign";
 import ExerciseListScreen from "../pages/DoctorExercies";
 import ExerciseDetailScreen from "../pages/DoctorExerciesDetail";
+import DoctorAddExercise from "../pages/DoctorAddExercise";
 
 
 const AppRouter = () => {
@@ -70,6 +71,7 @@ const AppRouter = () => {
       <Stack.Screen options={{title: "Hasta Detay"}} name="doctor-patient-detail" component={DoctorPatientDetail} />
       <Stack.Screen options={{title: "Egzersizler"}} name="doctor-exercies" component={ExerciseListScreen} />
       <Stack.Screen options={{title: "Egzersiz Detay"}} name="doctor-exercies-detail" component={ExerciseDetailScreen} />
+      <Stack.Screen options={{title: "Egzersiz Ekle"}} name="doctor-add-exercise" component={DoctorAddExercise} />
    
     </Stack.Navigator>
   );

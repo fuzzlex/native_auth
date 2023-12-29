@@ -15,7 +15,6 @@ const ExerciseDetailScreen = () => {
       <Swiper style={styles.wrapper} showsButtons={true}>
       <View syle={{display:`flex`,justifyContent:`center`}}>
       <Image style={styles.sliderImage} source={{uri:'https://fitnessaktif.com/wp-content/uploads/2019/07/bench-press-2.jpg'}} />
-
       </View>
       <Image style={styles.sliderImage} source={{uri:'https://fitnessaktif.com/wp-content/uploads/2019/07/bench-press-2.jpg'}} />
       <Image style={styles.sliderImage} source={{uri:'https://fitnessaktif.com/wp-content/uploads/2019/07/bench-press-2.jpg'}} />
@@ -45,8 +44,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   sliderImage: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
     marginRight:`auto`,
     marginLeft:`auto`,
     borderRadius: 8,
@@ -66,8 +65,9 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   wrapper: {
-    height:330,
-    textAlign:`center`
+    height:430,
+    textAlign:`center`,
+    // marginTop:-20
   },
 
 });
