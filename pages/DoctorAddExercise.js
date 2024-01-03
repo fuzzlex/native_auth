@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { View, Text,  Button ,TextInput} from "react-native";
+import { View, Text,  Button } from "react-native";
 import { Picker  } from '@react-native-picker/picker';
 // import TextInput from "react-native-paper";
+import { Input } from '@rneui/themed';
 
 
 export default function DoctorAddExercise() {
   const [name, setName] = useState("");
+  const [text, setText] = React.useState("");
+
 //   const [startDate, setStartDate] = useState(new Date());
   const [duration, setDuration] = useState("");
   const [frequency, setFrequency] = useState("");
@@ -28,7 +31,7 @@ export default function DoctorAddExercise() {
 
 
   return (
-    <View style={{ margin: 20 }}>
+    <View style={{ margin: 20, backgroundColor:"gray", padding:50 }}>
       <Text style={{ fontSize: 18 }}>İsim:</Text>
       <Picker
         selectedValue={name}
@@ -42,12 +45,18 @@ export default function DoctorAddExercise() {
       <Text style={{ fontSize: 18 }}>Başlama Tarihi:</Text>
     
       <Text style={{ fontSize: 18 }}>Gün Sayısı:</Text>
-      <TextInput
+      <Input
+      // label="Email"
+      value={text}
+      onChangeText={text => setText(text)}
+      keyboardType="numeric"
+    />
+      {/* <TextInput
         value={duration}
         onChangeText={(text) => setDuration(text)}
         keyboardType="numeric"
         style={{ marginBottom: 20, borderWidth: 1, padding: 10 }}
-      />
+      /> */}
 
       <Text style={{ fontSize: 18 }}>Frekans:</Text>
       <Picker
