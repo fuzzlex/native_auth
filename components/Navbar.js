@@ -13,7 +13,7 @@ export default function Navbar({ navigation }) {
         flexDirection: `row`,
         justifyContent: `space-between`,
         padding: 30,
-        backgroundColor: "#219ebc",
+        backgroundColor: "#E37737",
         borderBottomLeftRadius:30,
         borderBottomRightRadius:30,
         zIndex:999

@@ -44,6 +44,7 @@ export default function PatientExercise({navigation}) {
   //     image: "https://picsum.photos/id/7/250/350",
   //   },
   // ];
+
   return (
     <View>
     <ScrollView>
@@ -53,35 +54,44 @@ export default function PatientExercise({navigation}) {
           style={{
             margin: 5,
             padding: 25,
-            backgroundColor: `#023047`,
+            backgroundColor: `#E37737`,
             margin: 20,
           }}
         >
           <Card.Content
             style={{
+              
               display: `flex`,
               flexDirection: `row`,
               justifyContent: `space-between`,
             }}
           >
-            <View>
+            {/* <View>
               <Image
                 style={{ width: 70, height: 70, borderRadius: 50 }}
                 source={{ uri: exercise.image }}
               />
-            </View>
+            </View> */}
             <View>
               <Text
-                style={{ color: `white`, fontSize: 22 }}
+                style={{ color: `pink`, fontSize: 30,padding:20, alignItems:"center" }}
                 variant="titleLarge"
               >
-                {exercise.name} {exercise.surname}
+                {exercise.egzersiz_adi}
               </Text>
               <Text
                 style={{ color: `white`, fontSize: 22 }}
                 variant="titleLarge"
               >
-                Yas: {exercise.age}
+                Tekrar Sayısı: {exercise.tekrar_sayisi} 
+                
+              </Text>
+              <Text
+                style={{ color: `white`, fontSize: 22 }}
+                variant="titleLarge"
+              >
+                Set Sayısı: {exercise.set_sayisi}
+                
               </Text>
               <Text
                 style={{ color: `white`, fontSize: 15 }}
