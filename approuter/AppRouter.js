@@ -114,7 +114,7 @@ const AppRouter = () => {
         header: (props) => <CustomHeader {...props} navigation={navigation} />,
       })}
     >
-      <Drawer.Screen name="doctor-home" component={DoctorHome} />
+      {/* <Drawer.Screen name="doctor-home" component={DoctorHome} /> */}
     </Drawer.Navigator>
   );
   // screenOptions={{  header: () => <Navbar/> }}

@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { Button, Card } from "react-native-paper";
+import { View,  StyleSheet, TouchableOpacity } from "react-native";
+import { Text, Card, Paper } from "react-native-paper";
 import Navbar from "../components/Navbar";
 
 export default function DoctorHome({ navigation }) {
@@ -28,12 +28,13 @@ export default function DoctorHome({ navigation }) {
         justifyContent: `center`,
         alignItems: `center`,
         minHeight: `90%`,
-        backgroundColor:`#8ecae6`,
+        backgroundColor:`#f7dccb`,
         marginTop:-30
 
       }}
     >
-      <Card onPress={() => navigation.navigate(`doctor-patient`)} style={{ margin: 5, padding: 45, backgroundColor: `#023047` }}>
+
+      <Card onPress={() => navigation.navigate(`doctor-patient`)} style={{ margin: 5, padding: 35, backgroundColor: `#e37738` }}>
         <Card.Content>
           <Text style={{ color: `white`, fontSize: 22 }} variant="titleLarge">
             HASTALARIM
@@ -42,7 +43,7 @@ export default function DoctorHome({ navigation }) {
         <Card.Actions></Card.Actions>
       </Card>
 
-      <Card onPress={() => navigation.navigate(`doctor-exercies`)} style={{ margin: 5, padding: 45, backgroundColor: `#023047` }}>
+      <Card onPress={() => navigation.navigate(`doctor-exercies`)} style={{ margin: 5, padding: 35, backgroundColor: `#e37738` }}>
         <Card.Content>
           <Text style={{ color: `white`, fontSize: 22 }} variant="titleLarge">
             EGZERSIZLER

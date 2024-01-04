@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text,  Button } from "react-native";
+import { View, Text,  Button, ScrollView } from "react-native";
 import { Picker  } from '@react-native-picker/picker';
 // import TextInput from "react-native-paper";
 import { Input } from '@rneui/themed';
@@ -31,7 +31,9 @@ export default function DoctorAddExercise() {
 
 
   return (
-    <View style={{ margin: 20, backgroundColor:"gray", padding:50 }}>
+    <ScrollView>
+
+    <View style={{ margin: 20,  padding:50 }}>
       <Text style={{ fontSize: 18 }}>İsim:</Text>
       <Picker
         selectedValue={name}
@@ -71,5 +73,6 @@ export default function DoctorAddExercise() {
 
       <Button title="Ekle" onPress={handleAddButton} />
     </View>
+    </ScrollView>
   );
 }

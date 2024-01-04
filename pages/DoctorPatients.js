@@ -19,8 +19,7 @@ export default function DoctorPatients({navigation}) {
           style={{
             margin: 5,
             padding: 25,
-            backgroundColor: `#023047`,
-            margin: 20,
+            backgroundColor: `#efba96`,
           }}
         >
           <Card.Content
@@ -28,23 +27,24 @@ export default function DoctorPatients({navigation}) {
               display: `flex`,
               flexDirection: `row`,
               justifyContent: `space-between`,
+
             }}
           >
             <View>
               <Text
-                style={{ color: `white`, fontSize: 22 }}
+                style={{ color: `black`, fontSize: 22 }}
                 variant="titleLarge"
               >
                 {patient.name} {patient.surname}
               </Text>
               <Text
-                style={{ color: `white`, fontSize: 22 }}
+                style={{ color: `black`, fontSize: 22 }}
                 variant="titleLarge"
               >
                 Yas: {patient.age}
               </Text>
               <Text
-                style={{ color: `white`, fontSize: 15 }}
+                style={{ color: `black`, fontSize: 15 }}
                 variant="titleLarge"
               >
                 Tedavi Baslama: 15/12/2023

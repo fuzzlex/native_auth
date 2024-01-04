@@ -12,8 +12,8 @@ export default function Navbar({ navigation }) {
         display: "flex",
         flexDirection: `row`,
         justifyContent: `space-between`,
-        padding: 30,
-        backgroundColor: "#219ebc",
+        padding: 20,
+        backgroundColor: "#e37738",
         borderBottomLeftRadius:30,
         borderBottomRightRadius:30,
         zIndex:999
@@ -25,7 +25,7 @@ export default function Navbar({ navigation }) {
         icon={{ name: "user", type: "font-awesome" }}
         containerStyle={{
           backgroundColor: "#023047",
-          marginTop: 25,
+          marginTop: 20,
           marginLeft: 5,
         }}
         // onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
@@ -36,7 +36,7 @@ export default function Navbar({ navigation }) {
         icon={{ name: "stethoscope", type: "font-awesome" }}
         containerStyle={{
           // backgroundColor: "",
-          marginTop: 25,
+          marginTop: 20,
           marginLeft: 5,
         }}
         // style={{color:`black`}}
@@ -48,7 +48,7 @@ export default function Navbar({ navigation }) {
         icon={{ name: "bell", type: "font-awesome" }}
         containerStyle={{
           backgroundColor: "#023047",
-          marginTop: 25,
+          marginTop: 20,
           marginLeft: 5,
         }}
         // onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}

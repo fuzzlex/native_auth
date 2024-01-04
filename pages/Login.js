@@ -41,9 +41,8 @@ export default function LoginScreen({ navigation }) {
   const signin = () => {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
-          console.log(userCredential.user)
-          AsyncStorage.setItem("TOKEN", userCredential.user.uid);
-          navigation.navigate('DrawerHomeStack', {user_id:userCredential.user.uid});
+          // AsyncStorage.setItem("TOKEN", userCredential.user.uid);
+          navigation.navigate('doctor-home', {user_id:userCredential.user.uid});
         })
         .catch((error) => {
           const errorCode = error.code;
