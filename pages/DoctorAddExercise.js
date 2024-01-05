@@ -33,8 +33,9 @@ export default function DoctorAddExercise() {
   return (
     <ScrollView>
 
-    <View style={{ margin: 20,  padding:50 }}>
-      <Text style={{ fontSize: 18 }}>İsim:</Text>
+    <View style={{ margin: 20,  padding:50, borderWidth:2 }}>
+    <Text style={{ fontSize: 18 }}>Yeni Egzersiz Ekle</Text>
+      <Text style={{ fontSize: 18, marginBottom:-50 }}>İsim:</Text>
       <Picker
         selectedValue={name}
         onValueChange={(value) => setName(value)}
@@ -43,6 +44,8 @@ export default function DoctorAddExercise() {
       {pickers}
 
       </Picker>
+
+
 
       <Text style={{ fontSize: 18 }}>Başlama Tarihi:</Text>
     
@@ -53,12 +56,7 @@ export default function DoctorAddExercise() {
       onChangeText={text => setText(text)}
       keyboardType="numeric"
     />
-      {/* <TextInput
-        value={duration}
-        onChangeText={(text) => setDuration(text)}
-        keyboardType="numeric"
-        style={{ marginBottom: 20, borderWidth: 1, padding: 10 }}
-      /> */}
+ 
 
       <Text style={{ fontSize: 18 }}>Frekans:</Text>
       <Picker

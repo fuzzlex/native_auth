@@ -52,6 +52,7 @@ const AppRouter = () => {
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       <Stack.Screen name="DrawerHomeStack" component={DrawerHomeStack} />
+      <Stack.Screen name="doctor-home" component={DoctorStack} />
       <Stack.Screen
         name="ResetPasswordScreen"
         component={ResetPasswordScreen}
@@ -62,7 +63,6 @@ const AppRouter = () => {
     <Stack.Navigator
       initialRouteName="doctor-home"
       screenOptions={{
-      // header: () => <Navbar />,
       headerShown: true,
     }}
     >
@@ -96,15 +96,7 @@ const AppRouter = () => {
       <Navbar navigation={navigation} />
 
       
-        {/* <TouchableOpacity
-          style={{ marginTop: 30 }}
-          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-        >
-          <Button title="Menu"></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={{ marginTop: 30 }} onPress={() => {}}>
-          <Button title="dadwa"></Button>
-        </TouchableOpacity> */}
+
       </View>
     );
   }
@@ -121,7 +113,7 @@ const AppRouter = () => {
   return (
     <>
       <NavigationContainer>
-        {currentUser == null ? <LoginStack /> : <DoctorStack />}
+         <LoginStack /> 
       </NavigationContainer>
     </>
   );

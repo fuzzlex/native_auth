@@ -2,6 +2,8 @@ import React from "react";
 import { View,  StyleSheet, TouchableOpacity } from "react-native";
 import { Text, Card, Paper } from "react-native-paper";
 import Navbar from "../components/Navbar";
+import { Image } from "@rneui/base";
+
 
 export default function DoctorHome({ navigation }) {
   const styles = StyleSheet.create({
@@ -36,7 +38,11 @@ export default function DoctorHome({ navigation }) {
 
       <Card onPress={() => navigation.navigate(`doctor-patient`)} style={{ margin: 5, padding: 35, backgroundColor: `#e37738` }}>
         <Card.Content>
-          <Text style={{ color: `white`, fontSize: 22 }} variant="titleLarge">
+        <Image
+            style={{ width: 80, height: 80, marginLeft:20 }}
+            source={require('../assets/exercise-list.png')}
+          />
+          <Text style={{ color: `white`, fontSize: 22, fontWeight:500 }} variant="titleLarge">
             HASTALARIM
           </Text>
         </Card.Content>
@@ -45,7 +51,11 @@ export default function DoctorHome({ navigation }) {
 
       <Card onPress={() => navigation.navigate(`doctor-exercies`)} style={{ margin: 5, padding: 35, backgroundColor: `#e37738` }}>
         <Card.Content>
-          <Text style={{ color: `white`, fontSize: 22 }} variant="titleLarge">
+        <Image
+            style={{ width: 80, height: 80, marginLeft:20 }}
+            source={require('../assets/exercises.png')}
+          />
+          <Text style={{ color: `white`, fontSize: 22, fontWeight:500  }} variant="titleLarge">
             EGZERSIZLER
           </Text>
         </Card.Content>

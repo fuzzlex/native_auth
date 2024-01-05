@@ -9,7 +9,7 @@ import { Image, StyleSheet } from 'react-native'
 export default function StartScreen({ navigation }) {
   return (
     <Background>
-      <Image source={require('../assets/startscreen-1.jpg')} style={{width:330, height:300, borderBottomLeftRadius:170, borderBottomRightRadius:50}} />
+      <Image source={require('../assets/startscreen-1.jpg')} style={{width:370, height:390, borderBottomLeftRadius:170, borderBottomRightRadius:50}} />
       <Header>ROMATEM'e Hoşgeldiniz</Header>
       <Paragraph>
         Romatem ile tüm tedavilerinizi yönetin
@@ -17,12 +17,15 @@ export default function StartScreen({ navigation }) {
       <Button
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}
+        style={{backgroundColor:"#E37737"}}
       >
         Giriş Yap
       </Button>
       <Button
-        mode="outlined"
+      
+        mode="contained"
         onPress={() => navigation.navigate('RegisterScreen')}
+        style={{backgroundColor:"#E37737"}}
       >
         Üye Ol
       </Button>

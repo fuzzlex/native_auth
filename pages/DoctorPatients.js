@@ -19,7 +19,7 @@ export default function DoctorPatients({navigation}) {
           style={{
             margin: 5,
             padding: 25,
-            backgroundColor: `#efba96`,
+            backgroundColor: (index == 1 || index == 0) ? "#E37737" : `#efba96`,
           }}
         >
           <Card.Content

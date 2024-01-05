@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "native",
-    "slug": "native",
+    "name": "Romatem",
+    "slug": "Romatem",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/romatem-logo.png",
+    "icon": "./assets/appstore.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/romatem-logo.png",
@@ -22,7 +22,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/romatem-logo.png",
+        "foregroundImage": "./assets/appstore.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "metaworldbilisim.com"

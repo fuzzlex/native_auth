@@ -16,10 +16,10 @@ export default function DoctorPatientDetail({navigation}) {
           display: `flex`,
           flexDirection: `row`,
           justifyContent: `space-between`,
-          padding: 20,
+          padding: 10,
         }}
       >
-        <Text style={{ fontSize: 30, textAlign: `center`, marginTop: 15 }}>
+        <Text style={{ fontSize: 25, textAlign: `center`, marginTop: 15 }}>
           {name} {surname}
         </Text>
         <View>
@@ -29,7 +29,7 @@ export default function DoctorPatientDetail({navigation}) {
           />
         </View>
       </View>
-      <Text style={{ fontSize: 30, textAlign: `center`, marginTop: 15 }}>
+      <Text style={{ fontSize: 20, textAlign: `center`, marginTop: 1 }}>
         Egzersizler
       </Text>
 
@@ -38,7 +38,7 @@ export default function DoctorPatientDetail({navigation}) {
           position: "absolute",
           bottom: 40,
           right: 20,
-          backgroundColor: "#023047",
+          backgroundColor: "#E37737",
           borderRadius: 50,
           width: 80,
           height: 80,
@@ -47,7 +47,7 @@ export default function DoctorPatientDetail({navigation}) {
         }}
         onPress={() => navigation.navigate("doctor-add-exercise")}
       >
-        <Ionicons name="add" size={30} color="white" />
+        <Ionicons name="add" size={40} color="black" />
       </TouchableOpacity>
     </View>
   );

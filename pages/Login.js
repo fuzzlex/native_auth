@@ -87,7 +87,7 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.forgot}>Şifremi unuttum?</Text>
         </TouchableOpacity>
       </View>
-      <Button mode="contained" onPress={onLoginPressed}>
+      <Button mode="contained" style={{backgroundColor:"#E37737"}} onPress={onLoginPressed}>
         Giriş Yap
       </Button>
       {/* <View style={styles.row}>
