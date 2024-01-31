@@ -1,6 +1,5 @@
-import { View, Text, StyleSheet ,TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet ,ScrollView} from "react-native";
 import React, { useState } from "react";
-import { ScrollView } from "react-native-gesture-handler";
 import { Button, Card, Icon } from "@rneui/base";
 import { Input } from "@rneui/themed";
 import LoginScreen from "../pages/Login";

@@ -2,7 +2,6 @@ import { View, Text,ScrollView  } from "react-native";
 import React from "react";
 import { Card } from "react-native-paper";
 import { Image } from "@rneui/base";
-// import { ScrollView } from "react-native-gesture-handler";
 
 export default function DoctorPatients({navigation}) {
   const patients = require("../helpers/patients.json");

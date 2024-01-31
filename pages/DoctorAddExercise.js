@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { View, Text,  Button, ScrollView } from "react-native";
-import { Picker  } from '@react-native-picker/picker';
 // import TextInput from "react-native-paper";
-import { Input } from '@rneui/themed';
 import CalendarApp from "./CalendarComp";
 import DropDownPicker from 'react-native-dropdown-picker';
 
@@ -39,18 +37,7 @@ export default function DoctorAddExercise() {
 
   return (
     <>
-      <DropDownPicker
-      open={open}
-      value={name}
-      items={items}
-      setOpen={setOpen}
-      setValue={setName}
-      setItems={setItems}
-      style={{marginTop:25}}
-      listMode="MODAL"
-      mode="BADGE"
-      searchable={true}
-    />
+
 
 
 
@@ -67,12 +54,7 @@ export default function DoctorAddExercise() {
 
       </View>
     
-      <Text style={{ fontSize: 18 }}>Gün Sayısı:</Text>
 
- 
-
-      <Text style={{ fontSize: 18 }}>Frekans:</Text>
-     
 
       <Button title="Ekle" onPress={handleAddButton} />
     </View>
