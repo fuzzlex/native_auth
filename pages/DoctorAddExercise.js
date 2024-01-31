@@ -3,6 +3,9 @@ import { View, Text,  Button, ScrollView } from "react-native";
 import { Picker  } from '@react-native-picker/picker';
 // import TextInput from "react-native-paper";
 import { Input } from '@rneui/themed';
+import CalendarApp from "./CalendarComp";
+import DropDownPicker from 'react-native-dropdown-picker';
+
 
 
 export default function DoctorAddExercise() {
@@ -10,8 +13,15 @@ export default function DoctorAddExercise() {
   const [text, setText] = React.useState("");
 
 //   const [startDate, setStartDate] = useState(new Date());
-  const [duration, setDuration] = useState("");
   const [frequency, setFrequency] = useState("");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const egzersizler = require("../helpers/exercies.json");
+  const pickers = egzersizler?.map((e,i) => {
+    return {"label":e.egzersiz_adi, "value":i}
+  }
+    )
+  const [items, setItems] = useState(pickers);
 
 
   const handleAddButton = () => {
@@ -22,55 +32,52 @@ export default function DoctorAddExercise() {
     console.log("Duration:", duration);
     console.log("Frequency:", frequency);
   };
-  const egzersizler = require("../helpers/exercies.json");
-  const pickers = egzersizler.map((e,i) => 
-    <Picker.Item label={e.egzersiz_adi} value={i}/>
-    )
+
 
     
 
 
   return (
+    <>
+      <DropDownPicker
+      open={open}
+      value={name}
+      items={items}
+      setOpen={setOpen}
+      setValue={setName}
+      setItems={setItems}
+      style={{marginTop:25}}
+      listMode="MODAL"
+      mode="BADGE"
+      searchable={true}
+    />
+
+
+
+
     <ScrollView>
 
-    <View style={{ margin: 20,  padding:50, borderWidth:2 }}>
-    <Text style={{ fontSize: 18 }}>Yeni Egzersiz Ekle</Text>
-      <Text style={{ fontSize: 18, marginBottom:-50 }}>İsim:</Text>
-      <Picker
-        selectedValue={name}
-        onValueChange={(value) => setName(value)}
-        style={{ marginBottom: 20 }}
-      >
-      {pickers}
+    <View style={{ margin: 10,  padding:30, borderWidth:2 }}>
 
-      </Picker>
+      <CalendarApp />
+  
+      <View style={{flex:1, padding: 0, margin: 0}}>
+    
+     
 
-
-
-      <Text style={{ fontSize: 18 }}>Başlama Tarihi:</Text>
+      </View>
     
       <Text style={{ fontSize: 18 }}>Gün Sayısı:</Text>
-      <Input
-      // label="Email"
-      value={text}
-      onChangeText={text => setText(text)}
-      keyboardType="numeric"
-    />
+
  
 
       <Text style={{ fontSize: 18 }}>Frekans:</Text>
-      <Picker
-        selectedValue={frequency}
-        onValueChange={(value) => setFrequency(value)}
-        style={{ marginBottom: 20 }}
-      >
-        <Picker.Item label="Günde 2 defa" value="Günde 2 defa" />
-        <Picker.Item label="Gün 1 defa" value="Gün 1 defa" />
-        <Picker.Item label="İki günde bir" value="İki günde bir" />
-      </Picker>
+     
 
       <Button title="Ekle" onPress={handleAddButton} />
     </View>
     </ScrollView>
+    </>
+
   );
 }

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Romatem",
-    "slug": "Romatem",
+    "slug": "native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/appstore.png",
@@ -17,8 +17,22 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "plugins": [
+      [
+        "expo-calendar",
+    {
+        "calendarPermission": "Allow $(PRODUCT_NAME) to access your calendar",
+        "remindersPermission": "Allow $(PRODUCT_NAME) to access your reminders"
+      }
+      ]
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCalendarsUsageDescription": "Bu uygulama etkinlik biletlerindeki barkodları tarımak için kamerayı kullanır.",
+        "NSRemindersUsageDescription": "Uygulama hatırlatıcılarınıza erişmek için izin verin."
+      },
+      "bundleIdentifier": "iosv1"
     },
     "android": {
       "adaptiveIcon": {
